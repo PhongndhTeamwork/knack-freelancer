@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {Button} from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -96,6 +97,10 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+      <Button variant="primary">Button</Button>
+      <Button variant="danger">Button</Button>
+      <Button variant="secondary">Button</Button>
+
     </div>
   );
 }

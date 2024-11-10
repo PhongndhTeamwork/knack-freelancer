@@ -1,7 +1,8 @@
 "use client"
 
-import {Navbar} from "@/app/home/navbar";
 import React from "react";
+import {Footer} from "@/app/home/footer";
+import {Header} from "@/app/home/header";
 
 
 type Props = {
@@ -12,14 +13,14 @@ const HomeLayout = ({children}: Props) => {
 
     return (
         <div>
-            <div>
-                <Navbar/>
+            <div className="flex justify-center">
+                <Header/>
             </div>
-            <div className="px-5">
+            <div className="min-h-screen mx-auto mt-[32px]">
                 {children}
             </div>
             <div>
-
+                <Footer/>
             </div>
         </div>)
 }
