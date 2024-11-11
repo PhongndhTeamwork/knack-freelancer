@@ -29,7 +29,7 @@ const buttonVariants = cva(
             },
             size: {
                 primary: "h-[48px] px-4 py-2 rounded-3xl text-[18px]",
-                sm: "h-8 rounded-3xl px-3 text-xs",
+                sm: "h-[40px] rounded-3xl px-3 text-xs text-[18px]",
                 lg: "h-10 rounded-3xl px-8",
                 icon: "h-9 w-9",
             },

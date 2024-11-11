@@ -9,7 +9,7 @@ import {motion} from "framer-motion"
 export const Banner = () => {
 
     return (
-        <div className="container py-12 overflow-hidden mb-12">
+        <div className="container pt-12 overflow-hidden mb-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
                 {/* Left Column - Text Content */}
                 <div className="space-y-6">
@@ -169,6 +169,14 @@ export const Banner = () => {
                         </Card>
                     </motion.div>
                 </div>
+            </div>
+            <div className="mt-20">
+                <h2 className="text-[40px] font-bold mb-0">
+                    Đối tác của chúng tôi.
+                </h2>
+                <p className="text-[40px] font-bold text-[#8A8A8A]">
+                    tin tưởng và trách nhiệm.
+                </p>
             </div>
         </div>
     )
