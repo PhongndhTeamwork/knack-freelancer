@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import {  Plus } from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
@@ -21,14 +20,14 @@ const features = [
     }
 ]
 
-const talents = [
-    { image: "/placeholder.svg?height=600&width=400", alt: "Fashion model with sunglasses" },
-    { image: "/placeholder.svg?height=600&width=400", alt: "Model in red outfit" },
-    { image: "/placeholder.svg?height=600&width=400", alt: "Artist performer" },
-    { image: "/placeholder.svg?height=600&width=400", alt: "Glamour model" },
-    { image: "/placeholder.svg?height=600&width=400", alt: "Model with blonde hair" },
-    { image: "/placeholder.svg?height=600&width=400", alt: "Portrait of female model" }
-]
+// const talents = [
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Fashion model with sunglasses" },
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Model in red outfit" },
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Artist performer" },
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Glamour model" },
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Model with blonde hair" },
+//     { image: "/placeholder.svg?height=600&width=400", alt: "Portrait of female model" }
+// ]
 
 export const RecruitmentFeatures = () => {
     return (

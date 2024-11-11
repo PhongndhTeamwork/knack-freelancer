@@ -4,7 +4,6 @@ import {Card, CardContent} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 import {Illustration} from "@/components/custom/illustration";
-import {useState} from "react";
 import {motion} from "framer-motion"
 
 export const Banner = () => {
