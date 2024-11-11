@@ -54,11 +54,11 @@ export const Footer = () => {
                         </p>
                         <div className="space-y-2 flex items-center">
                             <p className="text-sm font-medium">Mobile App</p>
-                            <div className="flex space-x-2 h-[32px] ms-2">
-                                <Link href="#" className="opacity-75 hover:opacity-100">
+                            <div className="flex space-x-2 ms-2">
+                                <Link href="#" className="opacity-75 hover:opacity-100 w-[32px] h-[32px]">
                                     <Illustration width={32} height={32} url='/social/apple.svg'/>
                                 </Link>
-                                <Link href="#" className="opacity-75 hover:opacity-100">
+                                <Link href="#" className="opacity-75 hover:opacity-100 w-[32px] h-[32px]">
                                     <Illustration width={32} height={32} url='/social/android.svg'/>
                                 </Link>
                             </div>
