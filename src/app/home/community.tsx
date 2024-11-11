@@ -32,15 +32,15 @@ export const CommunitySection = () => {
                 <div className="flex">
                     {/* Main Large Image */}
                     <div className="relative rounded-xl w-[360px] h-[364px]">
-                        <Illustration width={360} height={363} url="/home/community1.svg" rounded={12}/>
+                        <Illustration width={360} height={364} url="/home/community1.svg" rounded={12}/>
                     </div>
 
-                    <div className="ml-2">
-                        <div className="relative flex flex-col w-[170px] h-[176px]">
-                            <Illustration width={172} height={176} url="/home/community3.svg" rounded={12}/>
+                    <div className="ml-3">
+                        <div className="relative flex flex-col w-[170px] h-[176px] rounded-[12px]">
+                            <Illustration width={170} height={176} url="/home/community3.svg" rounded={12}/>
                         </div>
-                        <div className="relative flex flex-col w-[170px] h-[176px] mt-2">
-                            <Illustration width={172} height={176} url="/home/community4.svg" rounded={12}/>
+                        <div className="relative flex flex-col w-[170px] h-[176px] mt-3 rounded-[12px]">
+                            <Illustration width={170} height={176} url="/home/community4.svg" rounded={12}/>
                         </div>
                     </div>
 
