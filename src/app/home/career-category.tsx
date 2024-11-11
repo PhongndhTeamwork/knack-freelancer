@@ -10,17 +10,17 @@ const categories = {
         items: [
             {
                 title: "Mẫu ảnh",
-                image: "/home/fashion1.svg",
+                image: "/home/fashion1.png",
                 link: "#"
             },
             {
                 title: "Stylish",
-                image: "/home/fashion2.svg",
+                image: "/home/fashion2.png",
                 link: "#"
             },
             {
                 title: "May mặc",
-                image: "/home/fashion3.svg",
+                image: "/home/fashion3.png",
                 link: "#"
             }
         ]
@@ -30,17 +30,17 @@ const categories = {
         items: [
             {
                 title: "Diễn viên",
-                image: "/home/movie1.svg",
+                image: "/home/movie1.png",
                 link: "#"
             },
             {
                 title: "Nhiếp ảnh",
-                image: "/home/movie2.svg",
+                image: "/home/movie2.png",
                 link: "#"
             },
             {
                 title: "Makeup Artist",
-                image: "/home/movie3.svg",
+                image: "/home/movie3.png",
                 link: "#"
             }
         ]

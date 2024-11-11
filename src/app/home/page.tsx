@@ -16,7 +16,7 @@ const HomePage = () => {
         </div>
         <div>
             <Marquee className="">
-                <Image src="/logo/logo-black.svg" alt="Image" width={200} height={100} layout="intrinsic" className="mx-6"/>
+                <Image src="/logo/logo-black.svg" alt="Image" width={200} height={100} layout="intrinsic" className="mx-6 filter grayscale"/>
                 <Image src="/logo/logo-black.svg" alt="Image" width={200} height={100} layout="intrinsic" className="mx-6"/>
                 <Image src="/logo/logo-black.svg" alt="Image" width={200} height={100} layout="intrinsic" className="mx-6"/>
                 <Image src="/logo/logo-black.svg" alt="Image" width={200} height={100} layout="intrinsic" className="mx-6"/>
