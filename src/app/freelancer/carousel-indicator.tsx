@@ -2,13 +2,15 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { cn } from "@/lib/utils"
+import {cn} from "@/lib/utils"
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
 } from "@/components/ui/carousel"
-import {useCallback, useEffect} from "react";
+import {useCallback, useEffect, useRef} from "react"
+import {EmblaCarouselType} from 'embla-carousel'
+
 
 const images = [
     {
@@ -30,22 +32,39 @@ const images = [
 ]
 
 export default function ImageCarousel() {
-    const [api, setApi] = React.useState<any>()
+    const [api, setApi] = React.useState<EmblaCarouselType | undefined>(undefined)
     const [current, setCurrent] = React.useState(0)
+    const intervalRef = useRef<NodeJS.Timeout | null>(null); // Store interval ID here
 
     const onSelect = useCallback(() => {
-        if (!api) return
-        setCurrent(api.selectedScrollSnap())
-    }, [api])
+        if (!api) return;
+        setCurrent(api.selectedScrollSnap());
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            api.scrollNext();
+        }, 10000);
+    }, [api]);
 
     useEffect(() => {
-        if (!api) return
-        onSelect()
-        api.on("select", onSelect)
+        if (!api) return;
+        onSelect();
+        api.on("select", onSelect);
         return () => {
-            api.off("select", onSelect)
-        }
-    }, [api, onSelect])
+            api.off("select", onSelect);
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [api, onSelect]);
+
+    useEffect(() => {
+        if (!api) return;
+        intervalRef.current = setInterval(() => {
+            api.scrollNext();
+        }, 10000);
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [api]);
+
 
     return (
         <div className="relative w-full">
