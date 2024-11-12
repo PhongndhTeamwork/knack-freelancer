@@ -2,9 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {cn} from "@/lib/utils"
-import {Button} from "@/components/ui/button"
-import {Input} from "@/components/ui/input"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -18,9 +18,8 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import {Menu} from "lucide-react"
+import { Menu, Search } from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 
 const components: { name: string, title: string; href: string; description: string }[] = [
     {
@@ -85,13 +84,13 @@ export const Header = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <NavigationMenu className="hidden md:flex mx-auto pb-0 relative w-[600px]">
+                    <NavigationMenu className="hidden md:flex max-w-full mx-auto pb-0 relative w-[600px]">
                         <NavigationMenuList>
                             {components.map((c, index: number) => {
                                 return (
                                     <NavigationMenuItem key={index}>
                                         <NavigationMenuTrigger className="text-[16px]">{c.name}</NavigationMenuTrigger>
-                                            <NavigationMenuContent className="left-0">
+                                        <NavigationMenuContent className="left-0">
                                             <ul className="grid w-[600px] gap-3 p-4">
                                                 <li className="row-span-3">
                                                     <NavigationMenuLink asChild>
@@ -117,61 +116,40 @@ export const Header = () => {
                     </NavigationMenu>
 
                     {/* Search and Auth Buttons */}
-                    <div className="flex items-center space-x-8">
-                        <div className="hidden md:flex relative h-[24px] space-x-4">
-                            <Illustration width={24} height={24} url="/freelancer/icon/paper-plane-tilt.svg"/>
-                            <Illustration width={24} height={24} url="/freelancer/icon/bell.svg"/>
-                            <Illustration width={24} height={24} url="/freelancer/icon/envelope.svg"/>
+                    <div className="flex items-center space-x-4">
+                        <div className="hidden md:flex relative">
+                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                            <Input
+                                type="search"
+                                placeholder="Tìm kiếm..."
+                                className="pl-10 w-[200px] lg:w-[300px]"
+                            />
                         </div>
                         <div className="hidden md:flex items-center space-x-2">
-                            <div className="flex items-center">
-                                <Avatar className="border border-gray-300 w-10 h-10">
-                                    <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
-                                                 className="w-full h-full"/>
-                                    <AvatarFallback className="text-[20px]">Q</AvatarFallback>
-                                </Avatar>
-                                <p className="ml-3 text-[16px] font-bold">Quyền Văn</p>
-                            </div>
+                            <Button variant="dark" className="w-[108px]" size="sm">Đăng nhập</Button>
+                            <Button variant="dark-outline" className="w-[108px]" size="sm">Đăng ký</Button>
                         </div>
 
                         {/* Mobile Menu Button */}
                         <Sheet>
                             <SheetTrigger asChild>
                                 <Button variant="ghost" size="icon" className="md:hidden">
-                                    <Menu className="h-5 w-5"/>
+                                    <Menu className="h-5 w-5" />
                                 </Button>
                             </SheetTrigger>
                             <SheetContent side="right">
                                 <div className="flex flex-col space-y-4 mt-4">
-                                    <Input type="search" placeholder="Tìm kiếm..."/>
+                                    <Input type="search" placeholder="Tìm kiếm..." />
                                     <div className="flex flex-col space-y-2">
-                                        <Link href="/search" className="p-2 hover:bg-gray-100 rounded-md">Tìm nhân sự &
-                                            việc làm</Link>
-                                        <Link href="/fields" className="p-2 hover:bg-gray-100 rounded-md">Lĩnh
-                                            vực</Link>
-                                        <Link href="/community" className="p-2 hover:bg-gray-100 rounded-md">Cộng
-                                            đồng</Link>
+                                        <Link href="/search" className="p-2 hover:bg-gray-100 rounded-md">Tìm nhân sự & việc làm</Link>
+                                        <Link href="/fields" className="p-2 hover:bg-gray-100 rounded-md">Lĩnh vực</Link>
+                                        <Link href="/community" className="p-2 hover:bg-gray-100 rounded-md">Cộng đồng</Link>
                                         <Link href="/blog" className="p-2 hover:bg-gray-100 rounded-md">Blog</Link>
-                                        <Link href="/about" className="p-2 hover:bg-gray-100 rounded-md">Về chúng
-                                            tôi</Link>
+                                        <Link href="/about" className="p-2 hover:bg-gray-100 rounded-md">Về chúng tôi</Link>
                                     </div>
                                     <div className="flex flex-col space-y-2">
-                                        <div className="hidden md:flex relative h-[24px] space-x-4">
-                                            <Illustration width={24} height={24}
-                                                          url="/freelancer/icon/paper-plane-tilt.svg"/>
-                                            <Illustration width={24} height={24} url="/freelancer/icon/bell.svg"/>
-                                            <Illustration width={24} height={24} url="/freelancer/icon/envelope.svg"/>
-                                        </div>
-                                        <div className="hidden md:flex items-center space-x-2">
-                                            <div className="flex items-center">
-                                                <Avatar className="border border-gray-300 w-10 h-10">
-                                                    <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
-                                                                 className="w-full h-full"/>
-                                                    <AvatarFallback className="text-[20px]">Q</AvatarFallback>
-                                                </Avatar>
-                                                <p className="ml-3 text-[16px] font-bold">Quyền Văn</p>
-                                            </div>
-                                        </div>
+                                        <Button variant="outline" className="w-full">Đăng nhập</Button>
+                                        <Button className="w-full">Đăng ký</Button>
                                     </div>
                                 </div>
                             </SheetContent>

@@ -1,22 +1,23 @@
 "use client"
 
 import React from "react";
-import {JobSearch} from "@/app/freelancer/job-search";
-import CarouselIndicators from "@/app/freelancer/carousel-indicator";
-import {ApplicationProcess} from "@/app/freelancer/application-process";
+import {FreelancerSearch} from "@/app/client/freelancer-search";
+import {InspirationGallery} from "@/app/client/inspiration-gallery";
 import {FeaturedCareers} from "@/components/constitution/featured-career";
 import {RelatedJobs} from "@/components/constitution/job-category";
+import {WelcomeBanner} from "@/app/client/welcome-banner";
+
 
 const HomePage = () => {
     return <div className="mt-3 mb-10">
         <div className="max-w-[1320px] mx-auto">
-            <CarouselIndicators/>
+            <WelcomeBanner/>
         </div>
         <div className="max-w-[1320px] mx-auto">
-            <ApplicationProcess/>
+            <FreelancerSearch/>
         </div>
         <div className="max-w-[1320px] mx-auto">
-            <JobSearch/>
+            <InspirationGallery/>
         </div>
         <div className="bg-black mt-16">
             <div className="max-w-[1320px] mx-auto">

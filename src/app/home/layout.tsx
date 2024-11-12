@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react";
-import {Footer} from "@/app/home/footer";
 import {Header} from "@/app/home/header";
+import {Footer} from "@/components/constitution/footer";
 
 
 type Props = {
