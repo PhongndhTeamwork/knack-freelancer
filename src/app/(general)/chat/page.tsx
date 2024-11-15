@@ -6,7 +6,7 @@ import {Button} from "@/components/ui/button"
 import {Card} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {ScrollArea} from "@/components/ui/scroll-area"
-import {Search, Phone, Settings, Paperclip, Mic, Send} from 'lucide-react'
+import {Search, Phone, Settings, Mic, Send} from 'lucide-react'
 import {Badge} from "@/components/ui/badge";
 
 export default function Chat() {
