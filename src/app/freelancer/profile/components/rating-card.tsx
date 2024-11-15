@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Facebook, Instagram, MessageSquare, Star } from 'lucide-react'
 import Link from "next/link"
 import {Illustration} from "@/components/custom/illustration";
 
