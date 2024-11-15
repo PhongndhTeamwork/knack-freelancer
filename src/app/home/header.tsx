@@ -39,14 +39,14 @@ const components: { name: string, title: string; href: string; description: stri
     },
     {
         name: "Cộng đồng",
-        href: "/docs/primitives/alert-dialog",
+        href: "/community",
         title: "Cộng đồng",
         description:
             "Tham gia cộng đồng và chia sẻ kinh nghiệm.",
     },
     {
         name: "Blog",
-        href: "/docs/primitives/alert-dialog",
+        href: "/blog",
         title: "Blog",
         description:
             "Đọc các bài viết về công việc và phát triển sự nghiệp.",
@@ -81,7 +81,7 @@ export const Header = () => {
             <div className="container mx-auto max-w-[1320px]">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center space-x-2 w-[130px] h-[47px]">
+                    <Link href="/home" className="flex items-center space-x-2 w-[130px] h-[47px]">
                         <Illustration width={130} height={47} url='/logo/logo-black.svg'/>
                     </Link>
 

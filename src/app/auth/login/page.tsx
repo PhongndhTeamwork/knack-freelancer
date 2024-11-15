@@ -28,9 +28,9 @@ export default function Login() {
         <div className="min-h-screen w-full flex p-4 overflow-hidden">
             {/* Left Side - Login Form */}
             <div className="flex-1 flex items-center justify-center p-4 sm:p-8 relative">
-                <div className="h-[130px] w-[47px] absolute left-0 top-0">
+                <Link href="/home" className="h-[130px] w-[47px] absolute left-0 top-0">
                     <Illustration width={130} height={47} url="/logo/logo-black.svg"/>
-                </div>
+                </Link>
                 <Card className="w-full max-w-md border-none shadow-none">
                     <CardContent className="space-y-6 mt-8">
                         {/* Login Form */}

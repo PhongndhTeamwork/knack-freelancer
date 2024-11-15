@@ -10,14 +10,14 @@ export default function Component() {
         platform: "TikTok"
     })
 
-    const tips = Array(9).fill({
+    const tips = Array(8).fill({
         title: "Mẹo nhỏ",
         content: "Làm sao để triển chiếu thẳng khi dùng trước đám đông",
         url: ""
     })
 
     return (
-        <div className="container mx-auto py-4 w-[1320px]">
+        <div className="container mx-auto py-4 w-[1320px] mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
                     {/* Featured Article */}

@@ -1,13 +1,14 @@
 'use client'
 
-import {useState} from "react"
+import {FormEvent, useState} from "react"
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 import {Button} from "@/components/ui/button"
 import {Card} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {ScrollArea} from "@/components/ui/scroll-area"
-import {Search, Phone, Settings, Mic, Send} from 'lucide-react'
+import {Search, Phone, Settings, PaperclipIcon, SendIcon, Mic, SmileIcon, MoreVertical, ChevronLeft} from 'lucide-react'
 import {Badge} from "@/components/ui/badge";
+import {useRouter} from "next/navigation";
 
 export default function Chat() {
     const [messages] = useState([
@@ -34,7 +35,16 @@ export default function Chat() {
             unread: true
         }
     ])
+    const [message, setMessage] = useState('');
+    const router =useRouter();
 
+    const handleSendMessage = (e: FormEvent) => {
+        e.preventDefault()
+        if (message.trim()) {
+            console.log('Sending message:', message)
+            setMessage('')
+        }
+    }
     return (
         <div className="flex h-screen bg-background overflow-hidden">
             {/* Sidebar */}
@@ -57,7 +67,7 @@ export default function Chat() {
                     </div>
                 </div>
 
-                <ScrollArea className="h-[calc(100vh-8rem)]">
+                <ScrollArea className="h-[calc(100vh-12rem)]">
                     {messages.map((chat) => (
                         <div
                             key={chat.id}
@@ -80,24 +90,46 @@ export default function Chat() {
                         </div>
                     ))}
                 </ScrollArea>
+
+                <div className="px-4">
+                    <Button variant="danger" className="w-full flex justify-center" size="sm" onClick={() => {
+                        router.push("/home")
+                    }}>
+                        <ChevronLeft className="relative bottom-[1px]"/>
+                        Quay lại
+                    </Button>
+                </div>
             </div>
 
             {/* Main Chat Area */}
             <div className="flex-1 flex flex-col">
-                <div className="flex items-center justify-between p-4 border-b">
+                <div className="flex items-center justify-between p-4">
                     <div className="flex items-center gap-3">
                         <Avatar>
                             <AvatarImage src="/placeholder.svg"/>
                             <AvatarFallback>AW</AvatarFallback>
                         </Avatar>
                         <div>
-                            <h2 className="font-semibold">Azunyan U. Wu</h2>
-                            <p className="text-sm text-muted-foreground">Online</p>
+                            <div className="font-semibold flex space-x-2">
+                                <p>Azunyan U. Wu</p>
+                                <Badge variant="success">Online</Badge>
+                            </div>
+                            <p className="text-sm text-muted-foreground">@azusanakano_1997</p>
                         </div>
                     </div>
-                    <Button variant="ghost" size="icon">
-                        <Phone className="h-5 w-5"/>
-                    </Button>
+                    <div className="flex space-x-4 items-center">
+                        <Button variant="dark-outline" size="sm">
+                            <Phone className="h-5 w-5"/> Gọi điện
+                        </Button>
+                        <Button variant="dark" size="sm">
+                            Trang cá nhân
+                        </Button>
+                        <Button variant="ghost">
+                            <MoreVertical/>
+                        </Button>
+
+                    </div>
+
                 </div>
 
                 <ScrollArea className="flex-1 p-4">
@@ -132,17 +164,57 @@ export default function Chat() {
                     </div>
                 </ScrollArea>
 
-                <div className="m-4 p-4 bg-[#D8D8D8] rounded-xl">
-                    <div className="flex items-center gap-2">
-                        <Input placeholder="Send a message..." className="flex-1"/>
-                        <Button variant="ghost" size="icon">
-                            <Mic className="h-5 w-5"/>
+                <form
+                    onSubmit={handleSendMessage}
+                    className="w-full mx-auto p-2"
+                >
+                    <div className="flex items-center gap-2 w-full rounded-2xl bg-[#D8D8D8] p-2">
+                        <Button
+                            type="button"
+                            size="icon"
+                            variant="ghost"
+                            className="shrink-0"
+                        >
+                            <PaperclipIcon className="h-5 w-5"/>
+                            <span className="sr-only">Attach file</span>
                         </Button>
-                        <Button size="icon">
-                            <Send className="h-5 w-5"/>
-                        </Button>
+                        <Input
+                            type="text"
+                            placeholder="Send a message..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                        />
+                        <div className="flex items-center space-x-2">
+                            <Button
+                                type="button"
+                                size="icon"
+                                variant="ghost"
+                                className="shrink-0"
+                            >
+                                <SmileIcon className="h-5 w-5"/>
+                            </Button>
+                            <Button
+                                type="button"
+                                size="icon"
+                                variant="ghost"
+                                className="shrink-0"
+                            >
+                                <Mic className="h-5 w-5"/>
+                            </Button>
+                            <Button
+                                type="submit"
+                                variant="dark"
+                                disabled={!message.trim()}
+                                className="flex items-center"
+                            >
+                                <SendIcon className="h-5 w-5"/>
+                                Send
+                            </Button>
+                        </div>
+
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )

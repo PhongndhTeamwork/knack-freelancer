@@ -7,7 +7,7 @@ import { Image, Search, Send } from 'lucide-react'
 
 export const CommunityFeed = () => {
     return (
-        <div className="w-full mx-auto ">
+        <div className="w-full mx-auto mb-20">
             <h1 className="text-[48px] font-bold mb-4">Cộng đồng</h1>
 
             <Tabs defaultValue="business" className="mb-6">
@@ -27,16 +27,17 @@ export const CommunityFeed = () => {
                         <div className="flex-1">
                             <Input
                                 placeholder="Hôm nay bạn muốn chia sẻ điều gì..."
-                                className="mb-2"
+                                className="mb-2 bg-[#D8D8D8]"
                             />
                             <div className="flex justify-between items-center">
                                 <div className="flex gap-2">
                                     <Button variant="ghost" size="icon">
+                                        {/* eslint-disable-next-line jsx-a11y/alt-text */}
                                         <Image className="h-5 w-5" />
                                     </Button>
                                 </div>
-                                <Button size="sm">
-                                    <Send className="h-4 w-4 mr-2" />
+                                <Button size="sm" variant="dark">
+                                    <Send className="h-4 w-4 mr-1" />
                                     Đăng
                                 </Button>
                             </div>
