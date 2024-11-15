@@ -62,6 +62,18 @@ body {
   }
 }
 
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left:8px;
+  /*display: none;*/
+  /*-webkit-appearance: none;*/
+}
+
+.react-datepicker-wrapper{
+  width: 100%;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react";
-import {Header} from "@/app/freelancer/header";
 import {Footer} from "@/components/constitution/footer";
+import {Header} from "@/components/constitution/header";
 
 type Props = {
     children?: React.ReactNode
@@ -15,7 +15,7 @@ const HomeLayout = ({children}: Props) => {
             <div className="flex justify-center">
                 <Header/>
             </div>
-            <div className="min-h-screen mx-auto mt-[32px]">
+            <div className="min-h-screen mx-auto mt-[80px]">
                 {children}
             </div>
             <div>

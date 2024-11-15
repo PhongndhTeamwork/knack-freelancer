@@ -16,7 +16,7 @@ const HomeLayout = ({children}: Props) => {
             <div className="flex justify-center">
                 <Header/>
             </div>
-            <div className="min-h-screen mx-auto mt-[32px]">
+            <div className="min-h-screen mx-auto mt-[80px]">
                 {children}
             </div>
             <div>

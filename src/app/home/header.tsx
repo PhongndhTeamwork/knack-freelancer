@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/sheet"
 import { Menu, Search } from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
+import {useRouter} from "next/navigation";
 
 const components: { name: string, title: string; href: string; description: string }[] = [
     {
@@ -61,6 +62,7 @@ const components: { name: string, title: string; href: string; description: stri
 
 
 export const Header = () => {
+    const router = useRouter();
     const [isScrolled, setIsScrolled] = React.useState(false)
 
     React.useEffect(() => {
@@ -73,10 +75,10 @@ export const Header = () => {
 
     return (
         <header className={cn(
-            "sticky top-0 z-50 w-full transition-all max-w-[1320px] text-[16px]",
+            "fixed top-0 z-50 w-full transition-all text-[16px]",
             isScrolled ? "bg-white shadow-md" : "bg-white"
         )}>
-            <div className="container mx-auto">
+            <div className="container mx-auto max-w-[1320px]">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2 w-[130px] h-[47px]">
@@ -122,12 +124,16 @@ export const Header = () => {
                             <Input
                                 type="search"
                                 placeholder="Tìm kiếm..."
-                                className="pl-10 w-[200px] lg:w-[300px]"
+                                className="pl-10 w-[200px] lg:w-[300px] bg-[#D8D8D8]"
                             />
                         </div>
                         <div className="hidden md:flex items-center space-x-2">
-                            <Button variant="dark" className="w-[108px]" size="sm">Đăng nhập</Button>
-                            <Button variant="dark-outline" className="w-[108px]" size="sm">Đăng ký</Button>
+                            <Button variant="dark" className="w-[108px]" size="sm" onClick={() => {
+                                router.push("/auth/login")
+                            }}>Đăng nhập</Button>
+                            <Button variant="dark-outline" className="w-[108px]" size="sm" onClick={() => {
+                                router.push("/auth/signup")
+                            }}>Đăng ký</Button>
                         </div>
 
                         {/* Mobile Menu Button */}
