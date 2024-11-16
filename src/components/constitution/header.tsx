@@ -22,16 +22,25 @@ import {Menu} from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {useRouter} from "next/navigation";
 
 
 type Props = {
     logoLink: string,
     components: NavigationItem[],
-    navWidth : number
+    navWidth: number
 }
 
 export const Header = ({logoLink, components, navWidth}: Props) => {
-    // const router = useRouter();
+    const router = useRouter();
     const [isScrolled, setIsScrolled] = React.useState(false)
 
     React.useEffect(() => {
@@ -56,7 +65,7 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
 
                     {/* Desktop Navigation */}
                     <NavigationMenu className="hidden md:flex md:justify-center mx-auto pb-0 relative" style={{
-                        width : navWidth+"px"
+                        width: navWidth + "px"
                     }}>
                         <NavigationMenuList>
                             {components.map((c, index: number) => {
@@ -65,7 +74,7 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                                         <NavigationMenuTrigger className="text-[16px]">{c.name}</NavigationMenuTrigger>
                                         <NavigationMenuContent className="left-0">
                                             <ul className="grid gap-3 p-4" style={{
-                                                width : navWidth+"px"
+                                                width: navWidth + "px"
                                             }}>
                                                 <li className="row-span-3">
                                                     <NavigationMenuLink asChild>
@@ -105,11 +114,23 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                         </div>
                         <div className="hidden md:flex items-center space-x-2">
                             <div className="flex items-center">
-                                <Avatar className="border border-gray-300 w-10 h-10">
-                                    <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
-                                                 className="w-full h-full"/>
-                                    <AvatarFallback className="text-[20px]">Q</AvatarFallback>
-                                </Avatar>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger>
+                                        <Avatar className="border border-gray-300 w-10 h-10">
+                                            <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
+                                                         className="w-full h-full"/>
+                                            <AvatarFallback className="text-[20px]">Q</AvatarFallback>
+                                        </Avatar>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent>
+                                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                        <DropdownMenuSeparator/>
+                                        <DropdownMenuItem>Profile</DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => {
+                                            router.push("/home")
+                                        }}>Đăng xuất</DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
                                 <p className="ml-3 text-[16px] font-bold">Quyền Văn</p>
                                 {/*<Button size="sm" variant="danger-outline" className="ml-2" onClick={() => {*/}
                                 {/*    router.push("/home")*/}
