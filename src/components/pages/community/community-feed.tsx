@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Image as ImageIcon, Search, Send } from 'lucide-react'
-import Image from "next/image";
+import {Illustration} from "@/components/custom/illustration";
 
 export const CommunityFeed = () => {
     return (
@@ -68,14 +68,12 @@ export const CommunityFeed = () => {
                     <CardContent className="p-4 pt-0">
                         <p className="mb-4">MY NEW CỔ LỆCH SƯN!!!!</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <Image
-                                src="/placeholder.svg"
-                                alt="Clothing rack"
+                            <Illustration
+                                url="/community/community1.png"
                                 className="w-full rounded-lg object-cover aspect-square"
                             />
-                            <Image
-                                src="/placeholder.svg"
-                                alt="Fashion photo"
+                            <Illustration
+                                url="/community/community2.png"
                                 className="w-full rounded-lg object-cover aspect-square"
                             />
                         </div>
