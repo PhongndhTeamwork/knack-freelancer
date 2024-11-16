@@ -10,6 +10,30 @@ import Marquee from "react-fast-marquee"
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 
+const brands = [
+    {
+        url : "/partner/brand1.png"
+    },
+    {
+        url : "/partner/brand2.png"
+    },
+    {
+        url : "/partner/brand3.png"
+    },
+    {
+        url : "/partner/brand4.png"
+    },
+    {
+        url : "/partner/brand5.png"
+    },
+    {
+        url : "/partner/brand6.png"
+    },
+    {
+        url : "/partner/brand7.png"
+    },
+]
+
 const HomePage = () => {
     return <div className="mt-3 mb-10">
         <div className="max-w-[1320px] mx-auto">
@@ -20,11 +44,11 @@ const HomePage = () => {
                 width: "calc((100vw - 1320px) / 2)"
             }}/>
             <Marquee className="">
-                {Array.from({length: 8}).map((_, index) =>
-                    <Button key={index} className="w-[240px] h-[120px]" variant="ghost">
-                        <Image src="/logo/logo-black.svg" alt="Image" width={240} height={120}
+                {brands.map((brand, index) =>
+                    <Button key={index} className="w-[240px] h-[120px] mx-6" variant="ghost">
+                        <Image src={brand.url} alt="Image" width={200} height={100}
                                layout="intrinsic"
-                               className="mx-6"/>
+                               className="mx-12"/>
                     </Button>
                 )}
             </Marquee>
