@@ -3,29 +3,29 @@ import Image from "next/image"
 export const CompletedWork = () => {
     const completedWorks = [
         {
-            src: "/placeholder.svg?height=300&width=400",
+            src: "/profile/profile1.svg",
             alt: "Person with raised arms against light background",
             className: "col-span-1 row-span-1"
         },
         {
-            src: "/placeholder.svg?height=300&width=400",
+            src: "/profile/profile2.svg",
             alt: "Person in red jacket against red background",
             className: "col-span-1 row-span-1"
         },
         {
-            src: "/placeholder.svg?height=400&width=600",
+            src: "/profile/profile5.svg",
             alt: "Smiling person against metal wall",
             className: "col-span-1 row-span-2"
         },
         {
-            src: "/placeholder.svg?height=300&width=400",
+            src: "/profile/profile3.svg",
             alt: "Dramatic portrait in shadows",
             className: "col-span-2 row-span-1"
         },
         {
-            src: "/placeholder.svg?height=400&width=800",
+            src: "/profile/profile4.svg",
             alt: "Action sequence scene",
-            className: "col-span-3 row-span-1"
+            className: "col-span-3 row-span-2"
         }
     ]
 

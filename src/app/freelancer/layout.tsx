@@ -35,7 +35,7 @@ const components: NavigationItem[] = [
     },
     {
         name: "Cộng đồng",
-        href: "/community",
+        href: "/freelancer/community",
         title: "Cộng đồng",
         description:
             "Tham gia cộng đồng và chia sẻ kinh nghiệm.",

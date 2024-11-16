@@ -14,7 +14,7 @@ interface ProfileHeaderProps {
 export const ProfileHeader = ({
                                   name = "Nguyễn Văn Cường",
                                   subtitle = "Người mẫu - Diễn viên/Người mẫu • TP HCM | 175 kg",
-                                  avatarUrl = "/avatar/avatar2.jpg",
+                                  avatarUrl = "/avatar/avatar.svg",
                                   followers = 2800,
                                   following = 240,
                                   address = "Hà Nội, Việt Nam"

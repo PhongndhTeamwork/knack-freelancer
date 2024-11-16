@@ -25,28 +25,28 @@ import {useRouter} from "next/navigation";
 const components: { name: string, title: string; href: string; description: string }[] = [
     {
         name: "Tìm nhân sự",
-        href: "/auth/login",
+        href: "/freelancer",
         title: "Tìm kiếm nhân sự",
         description:
             "Tìm kiếm ứng viên phù hợp cho công ty của bạn.",
     },
     {
         name: "Tìm việc",
-        href: "/auth/login",
+        href: "/client",
         title: "Tìm kiếm việc làm",
         description:
             "Khám phá cơ hội việc làm phù hợp với bạn.",
     },
     {
         name: "Cộng đồng",
-        href: "/auth/login",
+        href: "/community",
         title: "Cộng đồng",
         description:
             "Tham gia cộng đồng và chia sẻ kinh nghiệm.",
     },
     {
         name: "Blog",
-        href: "/auth/login",
+        href: "/blog",
         title: "Blog",
         description:
             "Đọc các bài viết về công việc và phát triển sự nghiệp.",

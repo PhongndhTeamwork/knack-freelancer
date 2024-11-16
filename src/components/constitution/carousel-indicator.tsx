@@ -14,21 +14,21 @@ import {EmblaCarouselType} from 'embla-carousel'
 
 const images = [
     {
-        src: "/carousel/carousel1.jpg",
+        src: "/carousel/carousel1.svg",
         alt: "Carousel image 1"
     },
     {
-        src: "/carousel/carousel2.jpg",
+        src: "/carousel/carousel2.svg",
         alt: "Carousel image 2"
     },
-    {
-        src: "/carousel/carousel3.jpg",
-        alt: "Carousel image 3"
-    },
-    {
-        src: "/carousel/carousel4.jpg",
-        alt: "Carousel image 4"
-    }
+    // {
+    //     src: "/carousel/carousel3.jpg",
+    //     alt: "Carousel image 3"
+    // },
+    // {
+    //     src: "/carousel/carousel4.jpg",
+    //     alt: "Carousel image 4"
+    // }
 ]
 
 export const ImageCarousel = () => {

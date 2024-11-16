@@ -23,7 +23,7 @@ const steps = [
     {
         number: 4,
         title: "Nhận công việc",
-        image: "/freelancer/home/home2.jpg",
+        image: "/freelancer/home/home3.jpg",
         alt: "Handshake representing job acceptance"
     },
     {
@@ -35,7 +35,7 @@ const steps = [
     {
         number: 6,
         title: "Nhận thanh toán một cách an toàn",
-        image: "/freelancer/home/home3.jpg",
+        image: "/freelancer/home/home2.jpg",
         alt: "Person receiving secure payment"
     }
 ]

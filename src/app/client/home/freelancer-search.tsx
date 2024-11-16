@@ -136,9 +136,12 @@ export const FreelancerSearch = () => {
             {/* Talent Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                 {talents.map((talent) => (
-                    <Card key={talent.id} className="bg-pink-50">
+                    <Card key={talent.id} className="bg-white relative roun">
+                        <div className="absolute top-0 left-0 bg-[#D8D8D8] w-full h-[60px]" style={{borderTopLeftRadius : "12px",borderTopRightRadius : "12px"}}>
+
+                        </div>
                         <CardContent className="p-6">
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 flex-col">
                                 <Avatar className="h-12 w-12 bg-pink-300">
                                     <AvatarFallback>{talent.name.charAt(0)}</AvatarFallback>
                                 </Avatar>
@@ -162,7 +165,7 @@ export const FreelancerSearch = () => {
                             <div className="text-sm">
                                 Rate từ <span className="font-semibold">{talent.rate}</span>
                             </div>
-                            <Button variant="dark" size="sm" >
+                            <Button variant="dark" size="sm">
                                 Tìm hiểu thêm
                             </Button>
                         </CardFooter>
@@ -171,7 +174,7 @@ export const FreelancerSearch = () => {
             </div>
             <Pagination>
                 <PaginationContent>
-                    <PaginationItem>
+                <PaginationItem>
                         <PaginationPrevious href="#"/>
                     </PaginationItem>
                     <PaginationItem>
