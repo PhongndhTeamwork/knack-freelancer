@@ -1,11 +1,11 @@
 "use client"
 
 import React from "react";
-import {FreelancerSearch} from "@/app/client/freelancer-search";
-import {InspirationGallery} from "@/app/client/inspiration-gallery";
+import {FreelancerSearch} from "@/app/client/home/freelancer-search";
+import {InspirationGallery} from "@/app/client/home/inspiration-gallery";
 import {FeaturedCareers} from "@/components/constitution/featured-career";
 import {RelatedJobs} from "@/components/constitution/job-category";
-import {WelcomeBanner} from "@/app/client/welcome-banner";
+import {WelcomeBanner} from "@/app/client/home/welcome-banner";
 
 
 const HomePage = () => {

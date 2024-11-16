@@ -2,10 +2,11 @@
 
 import React from "react";
 import {ImageCarousel} from "@/components/constitution/carousel-indicator";
-import {CommunityFeed} from "@/app/(general)/community/community-feed";
+import {CommunityFeed} from "@/components/pages/community/community-feed";
 
 
-const HomePage = () => {
+
+export const Community = () => {
     return <div className="mt-3 mb-10">
         <div className="max-w-[1320px] mx-auto">
             <ImageCarousel/>
@@ -16,4 +17,3 @@ const HomePage = () => {
     </div>
 }
 
-export default HomePage;

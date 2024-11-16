@@ -6,11 +6,15 @@ import {Button} from "@/components/ui/button"
 import {Card} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {ScrollArea} from "@/components/ui/scroll-area"
-import {Search, Phone, Settings, PaperclipIcon, SendIcon, Mic, SmileIcon, MoreVertical, ChevronLeft} from 'lucide-react'
+import {Search, Phone, Settings, PaperclipIcon, SendIcon, Mic, SmileIcon, MoreVertical, ArrowLeft } from 'lucide-react'
 import {Badge} from "@/components/ui/badge";
 import {useRouter} from "next/navigation";
 
-export default function Chat() {
+type Props = {
+    goBackLink : string;
+}
+
+export const Chat = ({goBackLink} : Props) => {
     const [messages] = useState([
         {
             id: 1,
@@ -92,10 +96,10 @@ export default function Chat() {
                 </ScrollArea>
 
                 <div className="px-4">
-                    <Button variant="danger" className="w-full flex justify-center" size="sm" onClick={() => {
-                        router.push("/home")
+                    <Button variant="dark" className="w-full flex justify-center" size="sm" onClick={() => {
+                        router.push(goBackLink || "/home")
                     }}>
-                        <ChevronLeft className="relative bottom-[1px]"/>
+                        <ArrowLeft className="relative bottom-[1px]"/>
                         Quay lại
                     </Button>
                 </div>

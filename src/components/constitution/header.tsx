@@ -22,51 +22,17 @@ import {Menu} from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
+import {useRouter} from "next/navigation";
 
-const components: { name: string, title: string; href: string; description: string }[] = [
-    {
-        name: "Tìm nhân sự",
-        href: "/docs/primitives/alert-dialog",
-        title: "Tìm kiếm nhân sự",
-        description:
-            "Tìm kiếm ứng viên phù hợp cho công ty của bạn.",
-    },
-    {
-        name: "Tìm việc",
-        href: "/docs/primitives/alert-dialog",
-        title: "Tìm kiếm việc làm",
-        description:
-            "Khám phá cơ hội việc làm phù hợp với bạn.",
-    },
-    {
-        name: "Cộng đồng",
-        href: "/community",
-        title: "Cộng đồng",
-        description:
-            "Tham gia cộng đồng và chia sẻ kinh nghiệm.",
-    },
-    {
-        name: "Blog",
-        href: "/blog",
-        title: "Blog",
-        description:
-            "Đọc các bài viết về công việc và phát triển sự nghiệp.",
-    },
-    {
-        name: "Về chúng tôi",
-        href: "/docs/primitives/alert-dialog",
-        title: "Về chúng tôi",
-        description:
-            "Tìm hiểu thêm về Knack và sứ mệnh của chúng tôi.",
-    },
-]
 
 type Props = {
     logoLink: string,
-    components: NavigationItem[]
+    components: NavigationItem[],
+    navWidth : number
 }
 
-export const Header = ({logoLink, components}: Props) => {
+export const Header = ({logoLink, components, navWidth}: Props) => {
+    // const router = useRouter();
     const [isScrolled, setIsScrolled] = React.useState(false)
 
     React.useEffect(() => {
@@ -79,7 +45,7 @@ export const Header = ({logoLink, components}: Props) => {
 
     return (
         <header className={cn(
-            "top-0 z-50 w-full transition-all text-[16px] fixed",
+            "top-0 z-50 w-full transition-all text-[16px] fixed px-2",
             isScrolled ? "bg-white shadow-md" : "bg-white"
         )}>
             <div className="container mx-auto max-w-[1320px]">
@@ -90,14 +56,18 @@ export const Header = ({logoLink, components}: Props) => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <NavigationMenu className="hidden md:flex mx-auto pb-0 relative w-[600px]">
+                    <NavigationMenu className="hidden md:flex md:justify-center mx-auto pb-0 relative" style={{
+                        width : navWidth+"px"
+                    }}>
                         <NavigationMenuList>
                             {components.map((c, index: number) => {
                                 return (
                                     <NavigationMenuItem key={index}>
                                         <NavigationMenuTrigger className="text-[16px]">{c.name}</NavigationMenuTrigger>
                                         <NavigationMenuContent className="left-0">
-                                            <ul className="grid w-[600px] gap-3 p-4">
+                                            <ul className="grid gap-3 p-4" style={{
+                                                width : navWidth+"px"
+                                            }}>
                                                 <li className="row-span-3">
                                                     <NavigationMenuLink asChild>
                                                         <Link
@@ -142,6 +112,11 @@ export const Header = ({logoLink, components}: Props) => {
                                     <AvatarFallback className="text-[20px]">Q</AvatarFallback>
                                 </Avatar>
                                 <p className="ml-3 text-[16px] font-bold">Quyền Văn</p>
+                                {/*<Button size="sm" variant="danger-outline" className="ml-2" onClick={() => {*/}
+                                {/*    router.push("/home")*/}
+                                {/*}}>*/}
+                                {/*    Logout<LogOut width={24} height={24}/>*/}
+                                {/*</Button>*/}
                             </div>
                         </div>
 

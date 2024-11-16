@@ -4,12 +4,21 @@ import React from "react";
 import {Footer} from "@/components/constitution/footer";
 import {Header} from "@/components/constitution/header";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
+import {cn} from "@/lib/utils";
+import {usePathname} from "next/navigation";
 
 type Props = {
     children?: React.ReactNode
 }
 
 const components: NavigationItem[] = [
+    {
+        name: "Tìm việc",
+        href: "/freelancer/home",
+        title: "Tìm kiếm việc làm",
+        description:
+            "Khám phá cơ hội việc làm phù hợp với bạn.",
+    },
     {
         name: "Profile",
         href: "/freelancer/profile",
@@ -19,17 +28,10 @@ const components: NavigationItem[] = [
     },
     {
         name: "Chat",
-        href: "/chat",
+        href: "/freelancer/chat",
         title: "Chat",
         description:
             "Chat với nhà tuyển dụng.",
-    },
-    {
-        name: "Tìm việc",
-        href: "/docs/primitives/alert-dialog",
-        title: "Tìm kiếm việc làm",
-        description:
-            "Khám phá cơ hội việc làm phù hợp với bạn.",
     },
     {
         name: "Cộng đồng",
@@ -40,10 +42,17 @@ const components: NavigationItem[] = [
     },
     {
         name: "Blog",
-        href: "/blog",
+        href: "/freelancer/blog",
         title: "Blog",
         description:
             "Đọc các bài viết về công việc và phát triển sự nghiệp.",
+    },
+    {
+        name: "Dashboard",
+        href: "/freelancer/dashboard",
+        title: "Dashboard",
+        description:
+            "Tìm hiểu thêm về chúng tôi.",
     },
     {
         name: "Về chúng tôi",
@@ -55,17 +64,17 @@ const components: NavigationItem[] = [
 ]
 
 const HomeLayout = ({children}: Props) => {
-
+    const pathname = usePathname();
     return (
         <div>
             <div className="flex justify-center">
-                <Header logoLink="/freelancer/home" components={components}/>
+                {!pathname.includes("chat") && <Header logoLink="/freelancer/home" components={components} navWidth={750}/>}
             </div>
-            <div className="min-h-screen mx-auto mt-[80px]">
+            <div className={cn("min-h-screen mx-auto", !pathname.includes("chat") && "mt-[80px]")}>
                 {children}
             </div>
             <div>
-                <Footer/>
+                {!pathname.includes("chat") && <Footer/>}
             </div>
         </div>)
 }

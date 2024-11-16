@@ -12,7 +12,7 @@ const data = Array.from({ length: 30 }, (_, i) => ({
     value: Math.floor(Math.random() * 2000) + 500
 }))
 
-export default function Dashboard() {
+export const Dashboard = () => {
     const [targetDate, setTargetDate] = useState<Date | null>(new Date(Date.now()))
     return (
         <div className="space-y-4 max-w-[1320px] mx-auto pt-12">
@@ -60,7 +60,7 @@ export default function Dashboard() {
             </div>
             <Card className="relative border-none shadow-none">
                 <CardHeader>
-                    <CardTitle>Thống kê thu nhập</CardTitle>
+                    <CardTitle>Thống kê</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div className="h-[300px] w-full mt-8">

@@ -4,6 +4,8 @@ import React from "react";
 import {Footer} from "@/components/constitution/footer";
 import {Header} from "@/components/constitution/header";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
+import {usePathname} from "next/navigation";
+import {cn} from "@/lib/utils";
 
 type Props = {
     children?: React.ReactNode
@@ -12,28 +14,28 @@ type Props = {
 const components: NavigationItem[] = [
     {
         name: "Tìm nhân sự",
-        href: "/docs/primitives/alert-dialog",
+        href: "/client/home",
         title: "Tìm kiếm nhân sự",
         description:
             "Tìm kiếm ứng viên phù hợp cho công ty của bạn.",
     },
     {
-        name: "Tìm việc",
-        href: "/docs/primitives/alert-dialog",
-        title: "Tìm kiếm việc làm",
+        name: "Chat",
+        href: "/client/chat",
+        title: "Chat",
         description:
-            "Khám phá cơ hội việc làm phù hợp với bạn.",
+            "Chat với nhân sự kỳ vọng.",
     },
     {
         name: "Cộng đồng",
-        href: "/community",
+        href: "/client/community",
         title: "Cộng đồng",
         description:
             "Tham gia cộng đồng và chia sẻ kinh nghiệm.",
     },
     {
         name: "Blog",
-        href: "/blog",
+        href: "/client/blog",
         title: "Blog",
         description:
             "Đọc các bài viết về công việc và phát triển sự nghiệp.",
@@ -48,17 +50,17 @@ const components: NavigationItem[] = [
 ]
 
 const HomeLayout = ({children}: Props) => {
-
+    const pathname = usePathname()
     return (
         <div>
             <div className="flex justify-center">
-                <Header logoLink="/client" components={components}/>
+                {!pathname.includes("chat") && <Header logoLink="/client/home" components={components} navWidth={570}/>}
             </div>
-            <div className="min-h-screen mx-auto mt-[80px]">
+            <div className={cn("min-h-screen mx-auto", !pathname.includes("chat") && "mt-[80px]")}>
                 {children}
             </div>
             <div>
-                <Footer/>
+                {!pathname.includes("chat") && <Footer/>}
             </div>
         </div>)
 }

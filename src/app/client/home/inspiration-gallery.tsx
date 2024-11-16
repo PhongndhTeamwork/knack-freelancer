@@ -2,42 +2,42 @@ import Image from "next/image"
 
 const galleryItems = [
     {
-        src: "/placeholder.svg?height=400&width=600",
+        src: "/client/home/home1.svg",
         alt: "Misty castle architecture",
         className: "col-span-1 row-span-1"
     },
     {
-        src: "/placeholder.svg?height=300&width=600",
+        src: "/client/home/home6.svg",
         alt: "Photographer on hilltop",
         className: "col-span-1 row-span-1"
     },
     {
-        src: "/placeholder.svg?height=400&width=300",
+        src: "/client/home/home5.svg",
         alt: "Photographer with camera",
         className: "col-span-1 row-span-2"
     },
     {
-        src: "/placeholder.svg?height=300&width=600",
+        src: "/client/home/home7.svg",
         alt: "Film production crew",
         className: "col-span-1 row-span-1"
     },
     {
-        src: "/placeholder.svg?height=400&width=400",
+        src: "/client/home/home2.svg",
         alt: "Adventure photographer",
         className: "col-span-1 row-span-2"
     },
     {
-        src: "/placeholder.svg?height=300&width=300",
+        src: "/client/home/home8.svg",
         alt: "Portrait in blue lighting",
         className: "col-span-1 row-span-1"
     },
     {
-        src: "/placeholder.svg?height=500&width=400",
+        src: "/client/home/home3.svg",
         alt: "Fashion model in white",
         className: "col-span-1 row-span-2"
     },
     {
-        src: "/placeholder.svg?height=300&width=600",
+        src: "/client/home/home4.svg",
         alt: "Lifestyle dining photo",
         className: "col-span-2 row-span-1"
     }

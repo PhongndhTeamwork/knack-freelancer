@@ -20,7 +20,7 @@ export default function Login() {
         if (email === "1") {
             router.push("/freelancer/home")
         }else if (email === "2"){
-            router.push("/client")
+            router.push("/client/home")
         }
     }
 

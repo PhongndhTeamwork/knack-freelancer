@@ -14,19 +14,19 @@ import {EmblaCarouselType} from 'embla-carousel'
 
 const images = [
     {
-        src: "/freelancer/carousel1.svg",
+        src: "/carousel/carousel1.jpg",
         alt: "Carousel image 1"
     },
     {
-        src: "/freelancer/carousel1.svg",
+        src: "/carousel/carousel2.jpg",
         alt: "Carousel image 2"
     },
     {
-        src: "/freelancer/carousel1.svg",
+        src: "/carousel/carousel3.jpg",
         alt: "Carousel image 3"
     },
     {
-        src: "/freelancer/carousel1.svg",
+        src: "/carousel/carousel4.jpg",
         alt: "Carousel image 4"
     }
 ]
@@ -79,7 +79,7 @@ export const ImageCarousel = () => {
                 <CarouselContent>
                     {images.map((image, index) => (
                         <CarouselItem key={index}>
-                            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-lg">
+                            <div className="relative aspect-[3/1] w-full overflow-hidden rounded-lg">
                                 <Image
                                     src={image.src}
                                     alt={image.alt}

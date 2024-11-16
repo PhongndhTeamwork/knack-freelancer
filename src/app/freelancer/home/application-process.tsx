@@ -1,41 +1,41 @@
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import {Card, CardContent} from "@/components/ui/card"
 
 const steps = [
     {
         number: 1,
         title: "Tạo hồ sơ cá nhân",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home1.jpg",
         alt: "Person creating profile"
     },
     {
         number: 2,
         title: "Tìm kiếm công việc phù hợp",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home2.jpg",
         alt: "Person searching for jobs"
     },
     {
         number: 3,
         title: "Đăng ký gửi hồ sơ ứng tuyển",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home3.jpg",
         alt: "Person submitting application"
     },
     {
         number: 4,
         title: "Nhận công việc",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home2.jpg",
         alt: "Handshake representing job acceptance"
     },
     {
         number: 5,
         title: "Hoàn thiện công việc",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home1.jpg",
         alt: "People completing work"
     },
     {
         number: 6,
         title: "Nhận thanh toán một cách an toàn",
-        image: "/placeholder.svg?height=400&width=600",
+        image: "/freelancer/home/home3.jpg",
         alt: "Person receiving secure payment"
     }
 ]
@@ -66,14 +66,16 @@ export const ApplicationProcess = () => {
                                     fill
                                     className="object-cover"
                                 />
-                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-                                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                  <span className="text-sm font-semibold">
-                    {step.number}
-                  </span>
+                                <div
+                                    className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"/>
+                                <div
+                                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                                  <span className="text-sm font-semibold">
+                                    {step.number}
+                                  </span>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                                    <h3 className="text-[24px] font-medium text-white">
+                                    <h3 className="text-[24px] font-bold text-white">
                                         {step.title}
                                     </h3>
                                 </div>

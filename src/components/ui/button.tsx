@@ -17,6 +17,8 @@ const buttonVariants = cva(
                 "bg-gradient-to-br from-gray-800 to-gray-900 text-primary-foreground hover:from-gray-900 hover:to-gray-900 active:from-gray-800 active:to-gray-900",
             "dark-outline":
                 "border border-gray-900 bg-background shadow-sm hover:bg-accent active:bg-gray-200 hover:text-accent-foreground",
+            "danger-outline":
+                "border border-red-500 text-red-500 bg-background shadow-sm hover:bg-accent active:bg-gray-200 hover:text-red-600",
             destructive:
                 "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
             outline:
