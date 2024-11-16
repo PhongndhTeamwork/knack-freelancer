@@ -5,14 +5,26 @@ import Link from "next/link"
 import {Illustration} from "@/components/custom/illustration";
 
 export const Blog = () => {
-    const articles = Array(4).fill({
-        title: "Công bố Quả chuối cười của năm",
-        image: "/blog/blog2.png",
+    const articles = [{
+        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        image: "/blog/blog1.jpg",
+        platform: "Truyền hình"
+    }, {
+        title: "Duis aute irure dolor in reprehenderit in voluptate",
+        image: "/blog/blog3.jpg",
+        platform: "Truyền hình"
+    }, {
+        title: " Aenean vulputate eleifend tellus",
+        image: "/blog/blog4.jpg",
+        platform: "Diễn Viên"
+    }, {
+        title: "Excepteur sint occaecat cupidatat non proident",
+        image: "/blog/blog5.jpg",
         platform: "TikTok"
-    })
+    }]
 
     const tips = Array(8).fill({
-        title: "Mẹo nhỏ",
+        title: "Cum sociis natoque penatibus et magnis ",
         content: "Làm sao để triển chiếu thẳng khi dùng trước đám đông",
         url: "/blog/tip1.png"
     })
@@ -26,7 +38,7 @@ export const Blog = () => {
                         <Link href="#" className="block">
                             <div className="relative aspect-[16/9]">
                                 <Image
-                                    src="/blog/blog1.png"
+                                    src="/blog/blog2.jpg"
                                     alt="Featured artist in gallery"
                                     fill
                                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -93,7 +105,7 @@ export const Blog = () => {
                                                     {tip.content}
                                                 </p>
                                             </div>
-                                            <div className="w-full h-full rounded-xl" style={{marginTop : 0}}>
+                                            <div className="w-full h-full rounded-xl" style={{marginTop: 0}}>
                                                 <Illustration
                                                     url={tip.url}
                                                     className="border border-gray-400 w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
