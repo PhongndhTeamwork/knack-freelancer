@@ -3,7 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Image, Search, Send } from 'lucide-react'
+import { Image as ImageIcon, Search, Send } from 'lucide-react'
+import Image from "next/image";
 
 export const CommunityFeed = () => {
     return (
@@ -33,7 +34,7 @@ export const CommunityFeed = () => {
                                 <div className="flex gap-2">
                                     <Button variant="ghost" size="icon">
                                         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                        <Image className="h-5 w-5" />
+                                        <ImageIcon className="h-5 w-5" />
                                     </Button>
                                 </div>
                                 <Button size="sm" variant="dark">
@@ -67,12 +68,12 @@ export const CommunityFeed = () => {
                     <CardContent className="p-4 pt-0">
                         <p className="mb-4">MY NEW CỔ LỆCH SƯN!!!!</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <img
+                            <Image
                                 src="/placeholder.svg"
                                 alt="Clothing rack"
                                 className="w-full rounded-lg object-cover aspect-square"
                             />
-                            <img
+                            <Image
                                 src="/placeholder.svg"
                                 alt="Fashion photo"
                                 className="w-full rounded-lg object-cover aspect-square"

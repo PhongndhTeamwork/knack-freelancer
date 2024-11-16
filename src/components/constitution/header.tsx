@@ -22,7 +22,6 @@ import {Menu} from "lucide-react"
 import {Illustration} from "@/components/custom/illustration";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
-import {useRouter} from "next/navigation";
 
 
 type Props = {

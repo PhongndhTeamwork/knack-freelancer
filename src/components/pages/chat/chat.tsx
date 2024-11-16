@@ -9,6 +9,7 @@ import {ScrollArea} from "@/components/ui/scroll-area"
 import {Search, Phone, Settings, PaperclipIcon, SendIcon, Mic, SmileIcon, MoreVertical, ArrowLeft } from 'lucide-react'
 import {Badge} from "@/components/ui/badge";
 import {useRouter} from "next/navigation";
+import {Illustration} from "@/components/custom/illustration";
 
 type Props = {
     goBackLink : string;
@@ -156,9 +157,8 @@ export const Chat = ({goBackLink} : Props) => {
                         <div className="flex justify-end">
                             <Card className="max-w-[80%] p-3 bg-primary text-primary-foreground">
                                 <div className="rounded-lg overflow-hidden mb-2">
-                                    <img
-                                        src="/placeholder.svg"
-                                        alt="Message attachment"
+                                    <Illustration
+                                        url="/placeholder.svg"
                                         className="w-full h-48 object-cover"
                                     />
                                 </div>
