@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect} from "react";
+// import {useEffect} from "react";
 import {JobSearch} from "@/app/freelancer/home/job-search";
 import {ApplicationProcess} from "@/app/freelancer/home/application-process";
 import {FeaturedCareers} from "@/components/constitution/featured-career";

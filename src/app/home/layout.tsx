@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Header} from "@/app/home/header";
 import {Footer} from "@/components/constitution/footer";
 import axios from "axios";
