@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import Link from "next/link"
 import {cn} from "@/lib/utils"
 import {Button} from "@/components/ui/button"
@@ -30,8 +29,11 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {useRouter} from "next/navigation";
-
+// import {useRouter} from "next/navigation";
+import { SignOutButton } from '@clerk/nextjs';
+import useProfileStore from "@/lib/store/profile.modal";
+import useAuthStore from "@/lib/store/user.modal";
+import {useEffect, useState} from "react";
 
 type Props = {
     logoLink: string,
@@ -40,10 +42,12 @@ type Props = {
 }
 
 export const Header = ({logoLink, components, navWidth}: Props) => {
-    const router = useRouter();
-    const [isScrolled, setIsScrolled] = React.useState(false)
+    // const router = useRouter();
+    const [isScrolled, setIsScrolled] = useState(false);
+    const {profile} = useProfileStore();
+    const { removeToken} = useAuthStore();
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0)
         }
@@ -127,11 +131,13 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                                         <DropdownMenuSeparator/>
                                         <DropdownMenuItem>Profile</DropdownMenuItem>
                                         <DropdownMenuItem onClick={() => {
-                                            router.push("/home")
-                                        }}>Đăng xuất</DropdownMenuItem>
+                                            removeToken();
+                                        }}><SignOutButton redirectUrl="/home">
+                                            <button>Logout</button>
+                                        </SignOutButton></DropdownMenuItem>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
-                                <p className="ml-3 text-[16px] font-bold">Quyền Văn</p>
+                                <p className="ml-3 text-[16px] font-bold">{profile.username}</p>
                                 {/*<Button size="sm" variant="danger-outline" className="ml-2" onClick={() => {*/}
                                 {/*    router.push("/home")*/}
                                 {/*}}>*/}
@@ -171,11 +177,11 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                                         <div className="hidden md:flex items-center space-x-2">
                                             <div className="flex items-center">
                                                 <Avatar className="border border-gray-300 w-10 h-10">
-                                                    <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
+                                                    <AvatarImage src={profile?.avatar} alt="User 1"
                                                                  className="w-full h-full"/>
-                                                    <AvatarFallback className="text-[20px]">Q</AvatarFallback>
+                                                    <AvatarFallback className="text-[20px]">{profile.username?.substring(0,1) || "P"}</AvatarFallback>
                                                 </Avatar>
-                                                <p className="ml-3 text-[16px] font-bold cursor-pointer">Quyền Văn</p>
+                                                <p className="ml-3 text-[16px] font-bold cursor-pointer">{profile.username}</p>
                                             </div>
                                         </div>
                                     </div>

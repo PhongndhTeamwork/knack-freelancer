@@ -1,11 +1,13 @@
 "use client"
 
-import React from "react";
+import React, {useEffect} from "react";
 import {Footer} from "@/components/constitution/footer";
 import {Header} from "@/components/constitution/header";
 import {NavigationItem} from "@/lib/types/nanigation-item.type";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
+import useProfileStore from "@/lib/store/profile.modal";
+import useAuthStore from "@/lib/store/user.modal";
 
 type Props = {
     children?: React.ReactNode
@@ -65,6 +67,18 @@ const components: NavigationItem[] = [
 
 const HomeLayout = ({children}: Props) => {
     const pathname = usePathname();
+    const {fetchProfile} = useProfileStore();
+    const {token, setToken} = useAuthStore();
+    useEffect(() => {
+        const storedToken = localStorage.getItem("knackToken");
+        setToken(storedToken || "");
+    }, [setToken]);
+
+    useEffect(() => {
+        // console.log(token);
+        if(!token) return;
+        fetchProfile(token)
+    }, [fetchProfile, token]);
     return (
         <div>
             <div className="flex justify-center">

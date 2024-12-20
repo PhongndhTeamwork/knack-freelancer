@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, {useEffect} from "react";
 import {JobSearch} from "@/app/freelancer/home/job-search";
 import {ApplicationProcess} from "@/app/freelancer/home/application-process";
 import {FeaturedCareers} from "@/components/constitution/featured-career";
@@ -8,6 +8,7 @@ import {RelatedJobs} from "@/components/constitution/job-category";
 import {ImageCarousel} from "@/components/constitution/carousel-indicator";
 
 const HomePage = () => {
+
     return <div className="mt-3 mb-10">
         <div className="max-w-[1320px] mx-auto">
             <ImageCarousel/>

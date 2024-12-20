@@ -9,11 +9,23 @@ import Link from "next/link"
 import {FormEvent, useState} from "react"
 import {Illustration} from "@/components/custom/illustration";
 import {useRouter} from "next/navigation";
+import {
+    ClerkLoaded,
+    ClerkLoading,
+    SignedIn,
+    SignedOut,
+    SignInButton,
+    UserButton,
+} from "@clerk/nextjs";
+import {Loader} from "lucide-react";
+// import axios from "axios";
+
 
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState("");
     const router = useRouter();
+    // const { user, isSignedIn } = useUser();
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -23,6 +35,35 @@ export default function Login() {
             router.push("/client/home")
         }
     }
+
+    // useEffect( () => {
+    //     const fetchData = async () => {
+    //         if (isSignedIn && user) {
+    //             // console.log({
+    //             //     clerkUserId: user.id,
+    //             //     username: user.fullName || user.username,
+    //             //     email: user.emailAddresses[0]?.emailAddress,
+    //             //     imageUrl: user.imageUrl
+    //             // });
+    //             try {
+    //                 await axios.post(`${process.env.NEXT_PUBLIC_PREFIX_API}/api/auth/login`, {
+    //                     clerkUserId: user.id,
+    //                     username: user.fullName || user.username,
+    //                     email: user.emailAddresses[0]?.emailAddress,
+    //                     imageSrc: user.imageUrl
+    //                 }).then(({data}) => {
+    //                     console.log(data);
+    //                 });
+    //
+    //             } catch (error) {
+    //                 console.error('Error during login:', error);
+    //             }
+    //         }
+    //     };
+    //     fetchData().then(() => {
+    //     });
+    //
+    // }, [isSignedIn, user, router]);
 
     return (
         <div className="min-h-screen w-full flex p-4 overflow-hidden">
@@ -106,14 +147,33 @@ export default function Login() {
                                 </div>
                             </div>
 
-                            <Button
-                                variant="dark-outline" className="w-full mt-3" size="sm"
-                            >
-                                <div className="w-[24px] h-[24px] mr-3">
-                                    <Illustration width={24} height={24} url="/auth/google.svg"/>
-                                </div>
-                                Đăng nhập với Google
-                            </Button>
+                            <ClerkLoading>
+                                <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
+                            </ClerkLoading>
+                            <ClerkLoaded>
+                                <SignedIn>
+                                    <UserButton/>
+                                    {/*{isLoaded && user && (*/}
+                                    {/*    <div className="mt-4">*/}
+                                    {/*        <p>Welcome, {user.fullName || user.username}!</p>*/}
+                                    {/*        <p>Email: {user.emailAddresses[0]?.emailAddress}</p>*/}
+                                    {/*    </div>*/}
+                                    {/*)}*/}
+                                </SignedIn>
+                                <SignedOut>
+                                    <SignInButton mode="modal">
+                                        <Button
+                                            variant="dark-outline" className="w-full mt-3" size="sm"
+                                        >
+                                            <div className="w-[24px] h-[24px] mr-3">
+                                                <Illustration width={24} height={24} url="/auth/google.svg"/>
+                                            </div>
+                                            Đăng nhập bằng Social
+                                        </Button>
+                                    </SignInButton>
+                                </SignedOut>
+                            </ClerkLoaded>
+
 
                             <div className="text-center text-sm">
                                 <span className="text-muted-foreground">

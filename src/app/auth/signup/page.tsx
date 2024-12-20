@@ -3,13 +3,15 @@
 import {Button} from "@/components/ui/button"
 import {Card, CardContent} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
-import {Eye, EyeOff} from 'lucide-react'
+import {Eye, EyeOff, Loader} from 'lucide-react'
 import Link from "next/link"
 import {useState} from "react"
 import {Illustration} from "@/components/custom/illustration";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {ClerkLoaded, ClerkLoading, SignedIn, SignedOut, SignUpButton, UserButton} from "@clerk/nextjs";
+
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false)
@@ -91,14 +93,32 @@ export default function Signup() {
                                 </div>
                             </div>
 
-                            <Button
-                                variant="dark-outline" size="sm" className="w-full mt-3"
-                            >
-                                <div className="w-[24px] h-[24px] mr-3">
-                                    <Illustration width={24} height={24} url="/auth/google.svg"/>
-                                </div>
-                                Đăng nhập với Google
-                            </Button>
+                            <ClerkLoading>
+                                <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
+                            </ClerkLoading>
+                            <ClerkLoaded>
+                                <SignedIn>
+                                    <UserButton/>
+                                    {/*{isLoaded && user && (*/}
+                                    {/*    <div className="mt-4">*/}
+                                    {/*        <p>Welcome, {user.fullName || user.username}!</p>*/}
+                                    {/*        <p>Email: {user.emailAddresses[0]?.emailAddress}</p>*/}
+                                    {/*    </div>*/}
+                                    {/*)}*/}
+                                </SignedIn>
+                                <SignedOut>
+                                    <SignUpButton mode="modal">
+                                        <Button
+                                            variant="dark-outline" className="w-full mt-3" size="sm"
+                                        >
+                                            <div className="w-[24px] h-[24px] mr-3">
+                                                <Illustration width={24} height={24} url="/auth/google.svg"/>
+                                            </div>
+                                            Đăng ký bằng Social
+                                        </Button>
+                                    </SignUpButton>
+                                </SignedOut>
+                            </ClerkLoaded>
 
                             <div className="text-center text-sm">
                                 <span className="text-muted-foreground">
