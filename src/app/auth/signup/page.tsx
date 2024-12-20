@@ -5,19 +5,62 @@ import {Card, CardContent} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {Eye, EyeOff, Loader} from 'lucide-react'
 import Link from "next/link"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import {Illustration} from "@/components/custom/illustration";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {ClerkLoaded, ClerkLoading, SignedIn, SignedOut, SignUpButton, UserButton} from "@clerk/nextjs";
+import {ClerkLoaded, ClerkLoading, SignedIn, SignedOut, SignUpButton, UserButton, useUser} from "@clerk/nextjs";
+import {useRouter} from "next/navigation";
+import useAuthStore from "@/lib/store/user.modal";
+import axios from "axios";
+import {Role} from "@/lib/enums/role.enum";
 
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false)
     const [startDate, setStartDate] = useState<Date | null>(null);
 
+    const router = useRouter();
+    const {setToken} = useAuthStore();
+    const {user, isSignedIn} = useUser();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (isSignedIn && user) {
+                try {
+                    await axios.post(`${process.env.NEXT_PUBLIC_PREFIX_API}/auth/login`, {
+                        clerkUserId: user.id,
+                        username: user.fullName || user.username,
+                        email: user.emailAddresses[0]?.emailAddress,
+                        imageSrc: user.imageUrl
+                    }).then(({data}) => {
+                        // console.log(data);
+                        // setIsLoading(true)
+                        setToken(data.data.token)
+                        if (+data.data.role === Role.Freelancer) {
+                            router.push("/freelancer/home")
+                        } else if (+data.data.role === Role.Client) {
+                            router.push("/client/home")
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error during login:', error);
+                    // setIsLoading(false)
+                }
+            }
+        };
+        fetchData().then(() => {
+        });
+
+    }, [isSignedIn, user, router, setToken]);
+
     return (
+        <>
+            {isSignedIn && user && <div className="w-screen h-screen absolute top-0 left-0 z-20 bg-white bg-opacity-40 flex justify-center items-center">
+                <div
+                    className="w-40 h-40 border-8 border-gray-600 border-solid rounded-full border-t-transparent animate-spin"></div>
+            </div>}
         <div className="min-h-screen w-full flex p-4 overflow-hidden">
             {/* Left Side - Login Form */}
             <div className="flex-1 flex items-center justify-center p-4 sm:p-8 relative">
@@ -141,5 +184,6 @@ export default function Signup() {
                 <Illustration rounded={12} className="flex flex-1" url="/auth/auth.svg"/>
             </div>
         </div>
+        </>
     )
 }

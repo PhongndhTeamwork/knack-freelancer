@@ -121,9 +121,9 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                                 <DropdownMenu>
                                     <DropdownMenuTrigger>
                                         <Avatar className="border border-gray-300 w-10 h-10">
-                                            <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User 1"
+                                            <AvatarImage src={profile.avatar} alt="User 1"
                                                          className="w-full h-full"/>
-                                            <AvatarFallback className="text-[20px]">Q</AvatarFallback>
+                                            <AvatarFallback className="text-[20px]">{profile.username?.substring(0,1) || "P"}</AvatarFallback>
                                         </Avatar>
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent>
