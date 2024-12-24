@@ -31,7 +31,7 @@ const features = [
 
 export const RecruitmentFeatures = () => {
     return (
-        <div className="container mx-auto py-12">
+        <div className="mx-auto py-12">
             <div className="space-y-0 mb-8">
                 <h2 className="text-[40px] font-bold mb-0">
                     Tương lai của tuyển dụng.
@@ -41,9 +41,9 @@ export const RecruitmentFeatures = () => {
                 </p>
             </div>
 
-            <div className="flex justify-between">
+            <div className="grid justify-between md:grid-cols-[40%_1fr] space-x-12">
                 {/* Features List */}
-                <div className="w-[460px] space-y-4">
+                <div className="space-y-4">
                     {features.map((feature, index) => (
                         <Card
                             key={index}
@@ -69,8 +69,8 @@ export const RecruitmentFeatures = () => {
                 </div>
 
                 {/* Talent Grid */}
-                <div className="relative w-[810px] h-[340px]">
-                    <Illustration width={810} height={340} url="/home/recuitment1.svg"/>
+                <div>
+                    <Illustration className="w-full object-cover aspect-[12/5]" url="/home/recuitment1.svg"/>
                 </div>
             </div>
         </div>

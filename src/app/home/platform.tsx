@@ -3,14 +3,14 @@ import { Button } from "@/components/ui/button"
 
 export const PlatformSections = () => {
     return (
-        <div className="container mx-auto py-12 space-y-12">
+        <div className="mx-auto py-12 space-y-12">
             {/* Freelancer Section */}
             <section className="relative mt-[72px]">
                 <h2 className="text-[40px] font-bold">
                     Dành cho Freelancers.
                 </h2>
                 <div className="bg-black rounded-3xl mt-8">
-                    <div className="grid lg:grid-cols-2 gap-8 p-8 lg:py-12">
+                    <div className="grid md:grid-cols-[65%_1fr] gap-8 py-8 px-12  lg:py-12">
                         <div className="space-y-6">
                             <blockquote className="text-xl md:text-2xl text-white">
                                 &#34;Gặp gỡ những khách hàng mà bạn muốn làm việc cùng và nhận một công việc{" "}
@@ -18,15 +18,14 @@ export const PlatformSections = () => {
                                 mà bạn luôn mơ ước&#34;
                             </blockquote>
                             <Button
-                                variant="outline"
-                                size="lg"
-                                className="bg-white text-black hover:bg-gray-100 rounded-full"
+                                variant="white"
+                                className="px-10"
                             >
                                 Tìm việc
                             </Button>
                         </div>
-                        <div className="relative lg:h-auto ml-28">
-                            <div className="absolute -bottom-[132px] left-[64px] w-[295px] h-[161px]">
+                        <div className="relative lg:h-auto ml-28 md:flex hidden">
+                            <div className="absolute -bottom-[160px] left-[64px] w-[295px] h-[161px]">
                                 <Image
                                     src="/home/freelancer1.svg"
                                     alt="Creative professional"
@@ -57,7 +56,7 @@ export const PlatformSections = () => {
             </section>
 
             {/* Business Section */}
-            <section className="relative top-[72px]">
+            <section className="relative top-36">
                 <h2 className="text-[40px] font-bold">
                     Dành cho Doanh nghiệp.
                 </h2>
@@ -65,7 +64,7 @@ export const PlatformSections = () => {
                     Tìm kiếm tài năng chưa bao giờ dễ dàng hơn
                 </p>
                 <div className="bg-black rounded-3xl overflow mt-8">
-                    <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+                    <div className="grid lg:grid-cols-[65%_1fr] gap-8 p-8 lg:p-12">
                         <div className="space-y-6">
                             <blockquote className="text-xl md:text-2xl text-white">
                                 &#34;Mở rộng networking với đa dạng các chuyên gia trong ngành với{" "}
@@ -84,7 +83,7 @@ export const PlatformSections = () => {
                                 </Button>
                             </div>
                         </div>
-                        <div className="relative h-[400px] lg:h-auto">
+                        <div className="relative h-[400px] lg:h-auto md:flex hidden">
                             <div className="absolute right-0 -bottom-12 w-[346px] h-[343px]">
                                 <Image
                                     src="/home/tranlot.svg"

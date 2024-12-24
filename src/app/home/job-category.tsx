@@ -103,7 +103,7 @@ const jobCategories: JobCategory[] = [
 
 export const JobCategories = () => {
     return (
-        <div className="container mx-auto py-12">
+        <div className="mx-auto py-12">
             <div className="flex justify-between items-center mb-8">
                 <div>
                     <h2 className="text-[40px] font-bold">Thông tin</h2>

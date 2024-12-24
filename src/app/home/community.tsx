@@ -3,10 +3,10 @@ import {Illustration} from "@/components/custom/illustration";
 
 export const CommunitySection = () => {
     return (
-        <div className="container mx-auto py-12 mt-16">
-            <div className="flex justify-between">
+        <div className="mx-auto py-12 mt-32">
+            <div className="justify-between grid md:grid-cols-[40%_1fr] space-x-12">
                 {/* Text Content */}
-                <div className="space-y-6 md:w-[463px]">
+                <div className="space-y-6">
                     <div>
                         <h2 className="text-[40px] font-bold mb-1">
                             Cộng đồng của chúng tôi.
@@ -29,19 +29,19 @@ export const CommunitySection = () => {
                     </Button>
                 </div>
                 {/* Image Grid */}
-                <div className="flex">
+                <div className="grid md:grid-cols-3 md:gap-4">
                     {/* Main Large Image */}
-                    <div className="relative rounded-xl w-[360px] h-[364px]">
-                        <Illustration width={360} height={364} url="/home/community1.svg" rounded={12}/>
+                    <div className="md:col-span-2 md:row-span-2">
+                        <Illustration url="/home/community1.svg" rounded={12}
+                                      className="w-full object-cover aspect-square"/>
                     </div>
-
-                    <div className="ml-3">
-                        <div className="relative flex flex-col w-[170px] h-[176px] rounded-[12px]">
-                            <Illustration width={170} height={176} url="/home/community3.svg" rounded={12}/>
-                        </div>
-                        <div className="relative flex flex-col w-[170px] h-[176px] mt-3 rounded-[12px]">
-                            <Illustration width={170} height={176} url="/home/community4.svg" rounded={12}/>
-                        </div>
+                    <div className="md:col-span-1 md:row-span-1">
+                        <Illustration url="/home/community3.svg" rounded={12}
+                                      className="w-full object-cover aspect-square"/>
+                    </div>
+                    <div className="md:col-span-1 md:row-span-1">
+                        <Illustration url="/home/community4.svg" rounded={12}
+                                      className="w-full object-cover aspect-square"/>
                     </div>
 
 

@@ -41,7 +41,7 @@ const footerLinks = {
 export const Footer = () => {
     return (
         <footer className="bg-black text-white">
-            <div className="container mx-auto px-4 py-12 max-w-[1280px]">
+            <div className="mx-auto py-12 max-w-[1840px] px-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo and Description */}
                     <div className="space-y-4">
@@ -87,8 +87,8 @@ export const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-800">
-                <div className="container mx-auto px-4 py-6 max-w-[1280px]">
+            <div className="border-t border-gray-800 max-w-[1840px] px-5 mx-auto">
+                <div className="mx-auto py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <p className="text-sm text-white">
                             <span>© &nbsp;</span>

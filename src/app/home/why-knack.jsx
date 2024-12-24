@@ -2,9 +2,9 @@ import {Illustration} from "@/components/custom/illustration";
 
 export const WhyKnackSection = () => {
     return (
-        <div className="container mx-auto py-12 flex justify-between">
+        <div className="mx-auto py-12 justify-between grid md:grid-cols-[40%_1fr] space-x-12">
             {/* Text Content */}
-            <div className="space-y-6 w-[463px]">
+            <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold">
                     Tại sao freelancers chuyển sang Knack?
                 </h2>
@@ -17,8 +17,8 @@ export const WhyKnackSection = () => {
             </div>
 
             {/* Image Card */}
-            <div className="w-[810px] h-[322px] ">
-                <Illustration width={810} height={322} rounded={12} url="/home/why-knack.svg"/>
+            <div className>
+                <Illustration className="w-full object-cover aspect-[12/5]" rounded={12} url="/home/why-knack.svg"/>
                 {/*<div className="relative flex items-center justify-center">*/}
                 {/*    <h3 className="absolute left-4 bottom-0 text-[40px] font-bold text-white text-start">*/}
                 {/*        Quy trình hợp tác hiệu quả, đúng tiến độ và đảm bảo quyền lợi*/}
