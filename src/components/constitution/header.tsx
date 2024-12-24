@@ -57,10 +57,10 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
 
     return (
         <header className={cn(
-            "top-0 z-50 w-full transition-all text-[16px] fixed px-2",
+            "top-0 z-50 w-full transition-all text-[16px] fixed",
             isScrolled ? "bg-white shadow-md" : "bg-white"
         )}>
-            <div className="container mx-auto max-w-[1320px]">
+            <div className="container mx-auto max-w-[1840px] px-5">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <Link href={logoLink || "/home"} className="flex items-center space-x-2 w-[130px] h-[47px]">
@@ -80,21 +80,23 @@ export const Header = ({logoLink, components, navWidth}: Props) => {
                                             <ul className="grid gap-3 p-4" style={{
                                                 width: navWidth + "px"
                                             }}>
-                                                <li className="row-span-3">
+                                                {c.items.map((item, itemIndex) =>
+                                                <li key={itemIndex} className="row-span-3">
                                                     <NavigationMenuLink asChild>
                                                         <Link
-                                                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                            href={c.href}
+                                                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md hover:bg-muted"
+                                                            href={item.href}
                                                         >
                                                             <div className="mb-2 mt-4 text-lg font-medium">
-                                                                {c.title}
+                                                                {item.title}
                                                             </div>
                                                             <p className="text-sm leading-tight text-muted-foreground">
-                                                                {c.description}
+                                                                {item.description}
                                                             </p>
                                                         </Link>
                                                     </NavigationMenuLink>
-                                                </li>
+                                                </li>)}
+
                                             </ul>
                                         </NavigationMenuContent>
                                     </NavigationMenuItem>

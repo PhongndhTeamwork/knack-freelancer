@@ -9,21 +9,21 @@ import {ImageCarousel} from "@/components/constitution/carousel-indicator";
 
 const HomePage = () => {
     return <div className="mt-3 mb-10">
-        <div className="max-w-[1320px] mx-auto">
+        <div className="max-w-[1840px] px-5 mx-auto">
             <ImageCarousel/>
         </div>
-        <div className="max-w-[1320px] mx-auto">
+        <div className="max-w-[1840px] px-5 mx-auto">
             <ApplicationProcess/>
         </div>
-        <div className="max-w-[1320px] mx-auto">
+        <div className="max-w-[1840px] px-5 mx-auto">
             <JobSearch/>
         </div>
         <div className="bg-black mt-16">
-            <div className="max-w-[1320px] mx-auto">
+            <div className="max-w-[1840px] px-5 mx-auto">
                 <FeaturedCareers/>
             </div>
         </div>
-        <div className="max-w-[1320px] mx-auto">
+        <div className="max-w-[1840px] px-5 mx-auto">
             <RelatedJobs/>
         </div>
     </div>

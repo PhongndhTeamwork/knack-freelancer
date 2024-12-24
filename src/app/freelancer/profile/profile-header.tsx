@@ -22,7 +22,7 @@ export const ProfileHeader = ({
     return (
         <div className="w-full overflow-hidden rounded-none">
             <div className="h-24 bg-gradient-to-r rounded-none from-[#FFA6F6] to-[#FF7173]"/>
-            <div className="relative pt-4 sm:pt-8 rounded-none max-w-[1320px] mx-auto">
+            <div className="relative pt-4 sm:pt-8 rounded-none max-w-[1840px] px-5 mx-auto">
                 <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
                     <Avatar className="w-32 h-32 border-4 border-white absolute -top-12 sm:-top-16 left-4">
                         <AvatarImage src={avatarUrl} alt={name}/>

@@ -40,7 +40,7 @@ const jobCategories = [
 
 export const RelatedJobs = () => {
     return (
-        <div className="container mx-auto px-4 py-12">
+        <div className="mx-auto px-4 py-12">
             <div className="mb-8">
                 <h2 className="text-[40px] font-bold">
                     Tìm kiếm công việc với

@@ -38,7 +38,7 @@ const careers = [
 export const FeaturedCareers = () => {
     return (
         <div className="bg-black text-white py-12">
-            <div className="container mx-auto px-4">
+            <div className="mx-auto">
                 <div className="flex items-center gap-2 mb-10 justify-center">
                     <Star className="w-10 h-10"/>
                     <h2 className="text-[40px] font-semibold">

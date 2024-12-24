@@ -42,7 +42,7 @@ const steps = [
 
 export const ApplicationProcess = () => {
     return (
-        <div className="container mx-auto py-12">
+        <div className="mx-auto py-12">
             <div className="mb-8">
                 <h2 className="text-[48px] font-bold mb-0">
                     Quy trình ứng tuyển.

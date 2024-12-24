@@ -78,7 +78,7 @@ export const Header = () => {
             "fixed top-0 z-50 w-full transition-all text-[16px]",
             isScrolled ? "bg-white shadow-md" : "bg-white"
         )}>
-            <div className="container mx-auto max-w-[1320px]">
+            <div className="container mx-auto max-w-[1840px] px-5">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <Link href="/home" className="flex items-center space-x-2 w-[130px] h-[47px]">

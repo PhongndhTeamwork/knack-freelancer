@@ -103,7 +103,7 @@ const jobs = [
 export const JobSearch = () => {
     // const [currentPage, setCurrentPage] = useState(1);
     return (
-        <div className="container mx-auto py-12">
+        <div className="mx-auto py-12">
             <h1 className="text-[40px] font-semibold mb-8">Tìm kiếm công việc cho bạn</h1>
 
             {/* Search Filters */}
