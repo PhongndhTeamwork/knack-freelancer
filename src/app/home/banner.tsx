@@ -9,8 +9,8 @@ import {motion} from "framer-motion"
 export const Banner = () => {
 
     return (
-        <div className="container pt-12 overflow-hidden mb-12">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="pt-12 overflow-hidden mb-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
                 {/* Left Column - Text Content */}
                 <div className="space-y-6">
                     <h1 className="text-4xl md:text-5xl lg:text-[72px] font-semibold">
@@ -49,7 +49,7 @@ export const Banner = () => {
                         initial={{y: -100, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
                         transition={{duration: 1, ease: 'easeOut'}}
-                        className="absolute bottom-[40%] left-16 transform -translate-x-1/2"
+                        className="absolute bottom-[40%] left-28 transform -translate-x-1/2"
                     >
                         <Card
                             className="bg-white shadow-lg border-black">
@@ -78,7 +78,7 @@ export const Banner = () => {
                         initial={{x: 100, opacity: 0}}
                         animate={{x: 0, opacity: 1}}
                         transition={{duration: 1, ease: 'easeOut'}}
-                        className="absolute  top-[35%] -right-8 transform -translate-y-1/2"
+                        className="absolute  top-[35%] -right-0 transform -translate-y-1/2"
                     >
                         <Card
                             className="bg-white shadow-lg border-black">
