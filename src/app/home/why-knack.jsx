@@ -17,8 +17,8 @@ export const WhyKnackSection = () => {
             </div>
 
             {/* Image Card */}
-            <div className>
-                <Illustration className="w-full object-cover aspect-[12/5]" rounded={12} url="/home/why-knack.svg"/>
+            <div className="rounded-2xl">
+                <Illustration className="w-full object-cover aspect-[12/5]" rounded={16} url="/home/why-knack.svg"/>
                 {/*<div className="relative flex items-center justify-center">*/}
                 {/*    <h3 className="absolute left-4 bottom-0 text-[40px] font-bold text-white text-start">*/}
                 {/*        Quy trình hợp tác hiệu quả, đúng tiến độ và đảm bảo quyền lợi*/}
